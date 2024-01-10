@@ -1,4 +1,4 @@
-const {Router} = require('Router');
+const {Router} = require('express');
 const {gameHandler, gameHandlerDetail}= require('../Handlers/gameHandlers');
 
 gameRouter = Router();
