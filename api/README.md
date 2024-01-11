@@ -7,7 +7,7 @@ petición get por id:
 
 GET https://www.freetogame.com/api/game?id=452
 
-peticion general (todos):
+peticion general (todos):ksakdlfjasdlkfjlsdksdlksdkl
 
 GET https://www.freetogame.com/api/games
 
