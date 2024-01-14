@@ -1,0 +1,11 @@
+.navbarContainer {
+    width: 200px; /* Ancho de la barra lateral */
+    height: 100vh; /* Altura completa de la pantalla */
+    background-color: #c5cef9; /* Color de fondo de la barra lateral */
+    position: fixed; /* Fijar la barra lateral en su lugar */
+    top: 0; /* Alinear la barra lateral en la parte superior */
+    left: 0; /* Alinear la barra lateral a la izquierda */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
