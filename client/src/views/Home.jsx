@@ -4,20 +4,8 @@ import axios from 'axios'
 
 const Home = () => {
 
-  const pedir = async()=>{
-    try {
-      const game = await axios(`/game`);
-      const data = game.data;
-      return data;
-    } catch (error) {
-      alert('no se pudió')
-    }
-  }
-  useEffect(()=>{
-    pedir()
-  },[])
 
-  const data = pedir; 
+
   return (
     <div>
     <NavBar/>
