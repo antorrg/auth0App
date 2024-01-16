@@ -17,11 +17,17 @@
 //* :::::::::::::::::::::  App creada el día 09/01/2024  ::::::::::::::::::::::::::::::::                        
 
 const server = require('./src/server');
+const {sequelize} = require('./src/database')
 require ('dotenv').config();
 const {PORT}=process.env;
 
 
 
-server.listen(PORT, ()=>{
-    console.log(`Server is listening in port ${PORT}`)
+server.listen(PORT, async ()=>{
+    try {
+        await sequelize.sync({force:false});
+        console.log(`Server is listening in port ${PORT} ✅` );
+    } catch (error) {
+        console.error('Error syncing database', error.message)
+    }
 })
