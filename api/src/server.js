@@ -10,7 +10,7 @@ const server = express();
 server.use(morgan('dev'));
 server.use(cors('dev'));
 server.use(express.json());
-server.use(jwtCheck)
+//server.use(jwtCheck)
 server.use(mainRouter);
 
 

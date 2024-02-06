@@ -39,16 +39,16 @@ module.exports = (sequelize) => {
             allowNull:false,
         },
         release_date:{
-            type:DataTypes.DATEONLY,
-            allownull:false,
+            type:DataTypes.STRING,
+            allownull:true,
         },
-        url_profile:{
+        freetogame_profile_url:{
             type:DataTypes.STRING,
             allowNull:true,
         },
         price:{
             type: DataTypes.DECIMAL(7,2),
-            allowNull: false,
+            allowNull: true,
         },
         enable:{
             type: DataTypes.BOOLEAN,
