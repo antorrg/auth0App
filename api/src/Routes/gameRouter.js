@@ -3,7 +3,7 @@ const {gameHandler, gameHandlerDetail, createdGame}= require('../Handlers/gameHa
 gameRouter = Router();
 
 gameRouter.get('/game', gameHandler)
-gameRouter.get('./game/:id', gameHandlerDetail)
+gameRouter.get('/game/:id', gameHandlerDetail)
 gameRouter.post('/game', createdGame)
 
 

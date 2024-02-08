@@ -1,4 +1,4 @@
-const {getGames, insertGame} = require('../Controllers/gamesControllers')
+const {getGames, getById, insertGame} = require('../Controllers/gamesControllers')
 
 const gameHandler= async(req, res)=>{
    const page = req.query.page || 1;
@@ -13,7 +13,7 @@ const gameHandler= async(req, res)=>{
 const gameHandlerDetail = async(req, res)=>{
     const {id}= req.params;
     try {
-        const response = await console.log('estoy sin definir aun');
+        const response = await getById(id);
         res.status(200).json(response);
      } catch (error) {
         res.status(400).json({error:error.message});

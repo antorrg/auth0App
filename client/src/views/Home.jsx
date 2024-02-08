@@ -1,29 +1,27 @@
 import axios from 'axios'
 import{ useEffect, useState} from 'react'
+import {useDispatch, useSelector }  from 'react-redux';
 import NavBar from '../components/NavBar'
 import Cards from '../components/Cards'
+import {getCharacters}from '../redux/actions'
 
 const Home = () => {
-  const [games, setGames]= useState([]);
-  const data = async()=>{
-    try {
-      const response = await axios(`/game`);
-      const game = response.data.results;
-      console.log(game)
-     setGames(game);
-    } catch (error) {
-      throw error;
-    }
-  }
+  const dispatch = useDispatch();
+  const games = useSelector((state)=>state.character)
+  const currentPage = useSelector((state)=>state.currentPage);
+  const guide = currentPage? currentPage : 1;
+  const [page, setPage]= useState(guide)
+  const totalPages = useSelector((state)=>state.pageNumber)
+ 
   useEffect(()=>{
-    data();
-  },[])
+    dispatch(getCharacters(page));
+  },[dispatch, page])
 
 console.log(games)
 
   return (
     <div>
-    <NavBar/>
+    <NavBar page={page} setPage ={setPage} finalPage = {totalPages}/>
     <Cards game = {games}/>
     </div>
   )

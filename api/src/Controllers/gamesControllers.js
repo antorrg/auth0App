@@ -38,38 +38,49 @@ const getGames = async (req, page) => {
 
 const nextPageUrl = (req, totalPages, currentPage) => {
     if (currentPage < totalPages) {
-        const nextPage = currentPage + 1;
-        return `${getBaseUrl(req)}?page=${nextPage}`;
+        console.log(currentPage+' soy en next')
+        const nextPage = Number(currentPage) + 1
+        console.log(nextPage+' soy nextPage')
+        return `${getBaseUrl(req)}?page=${parseInt(nextPage,10)}`;
     }
-    return null;
+    if(currentPage === totalPages){
+        return null;
+    }
 };
 
 const prevPageUrl = (req, totalPages, currentPage) => {
     if (currentPage > 1) {
-        const prevPage = currentPage - 1;
-        return `${getBaseUrl(req)}?page=${prevPage}`;
+        //console.log(currentPage+' soy page')
+        let prevPage = Number(currentPage) - 1;
+        return `${getBaseUrl(req)}?page=${parseInt(prevPage, 10)}`;
     }
-    return null;
+    if(currentPage ===1){
+        return null;
+    }
 };
 
 const getBaseUrl = (req) => {
     return `${req.protocol}://${req.get('host')}${req.baseUrl}${req.path}`;
 };
 
-
-// const getGames = async()=>{
-//     try {
-//         const gameFound = await Videogame.findAll();
-//         if(gameFound.length===0){
-//             throw new Error('This table is empty')
-//         }else{
-//             const data = gameFound;
-//             return data;
-//         }
-//     } catch (error) {
-//         throw error;
-//     }
-// }
+//===================================================================================
+const getById = async(id)=>{
+    try {
+        const gameFound = await Videogame.findByPk(id,{
+            where: {
+                deletedAt: false,
+            }
+        });
+        if(!gameFound){
+            throw new Error('This game do not exist')
+        }else{
+            const data = gameFound;
+            return data;
+        }
+    } catch (error) {
+        throw error;
+    }
+}
 
 const insertGame = async(id,title, thumbnail,short_description, game_url,genre,platform, publisher, developer,release_date, freetogame_profile_url)=>{
     try {
@@ -107,5 +118,6 @@ const insertGame = async(id,title, thumbnail,short_description, game_url,genre,p
 }
 module.exports = {
     getGames, 
+    getById,
     insertGame
 };

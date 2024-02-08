@@ -2,10 +2,10 @@
     /* display: flex;
     flex-wrap:wrap;
     justify-content: center; */
-     width: 65vw;
+     width: 70vw;
     margin: 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr ;
     grid-template-rows: 1fr 1fr ;
-    grid-gap: 1.25rem;
+    grid-gap: 1.20rem;
 }
