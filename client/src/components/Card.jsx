@@ -5,7 +5,7 @@ import style from './styles/Card.module.css'
 
 const Card = ({game}) => {
   const {id,title,thumbnail, genre, platform }=game;
-  console.log(title)
+  //console.log(title)
   return (
     <div key = {id} className={style.myCard}>
       <div className={style.innerCard}>
