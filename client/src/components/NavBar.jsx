@@ -5,7 +5,7 @@ import GenericButton from './Buttons/GenericButton';
 
 const NavBar = ({page, setPage, finalPage}) => {
   const {isAuthenticated }= useAuth0();
-  console.log(isAuthenticated)
+  //console.log(isAuthenticated)
   return (
 
     <div className={style.navbarContainer}>

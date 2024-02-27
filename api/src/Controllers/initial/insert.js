@@ -1,5 +1,5 @@
 // En un archivo donde se manejan las operaciones relacionadas con el llenado de datos (por ejemplo, fillData.js)
-const vgBulk = require ('./vgbulk');
+const vgBulk = require ('./vgbulk.js');
 const {Videogame}= require('../../database.js'); // Importa tus modelos de tablas
 const games = require ('../../../data/games.js'); // Ruta relativa al archivo indexData (reune la informacion y la exporta en un objeto)
 

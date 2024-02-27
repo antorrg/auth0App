@@ -18,7 +18,7 @@ const Home = () => {
     dispatch(getCharacters(page, token));
   },[dispatch, page])
 
-console.log(games)
+//console.log(games)
 
   return (
     <div>
