@@ -7,9 +7,14 @@ export const DETAILS='DETAILS';
 export const PAGESNUM = 'PAGESNUM'
 
 
-export const getCharacters =(page)=> async(dispatch)=>{
+export const getCharacters =(page, token)=> async(dispatch)=>{
     try {
-        const response = await axios(`/game?page=${page}`);
+        const response = await axios(`/game?page=${page}`,{
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+              
+        });
          dispatch({
             type:GAMES,
             payload: response.data

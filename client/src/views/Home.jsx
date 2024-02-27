@@ -12,9 +12,10 @@ const Home = () => {
   const guide = currentPage? currentPage : 1;
   const [page, setPage]= useState(guide)
   const totalPages = useSelector((state)=>state.pageNumber)
- 
+  const token = localStorage.getItem('accessToken')
+ console.log(token)
   useEffect(()=>{
-    dispatch(getCharacters(page));
+    dispatch(getCharacters(page, token));
   },[dispatch, page])
 
 console.log(games)

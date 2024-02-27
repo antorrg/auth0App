@@ -5,4 +5,5 @@ const count = (arr)=>{
     return data;
 }
 
-console.log(count(games))
+
+console.log('Total account: '+count(games))
