@@ -25,7 +25,7 @@ const createdGame = async(req, res)=>{
       const response = await insertGame(id,title, thumbnail,short_description, game_url,genre,platform, publisher, developer,release_date, freetogame_profile_url);
       res.status(201).json(response);
    } catch (error) {
-      res.status(400).json({error:error.mesagge});
+      res.status(400).json({error:error.message});
    }
 };
 

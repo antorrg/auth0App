@@ -28,9 +28,13 @@ export const getCharacters =(page, token)=> async(dispatch)=>{
         alert('Error fetching data')
     }
 }
-export const getByid =(id)=>async(dispatch)=>{
+export const getByid =(id, token)=>async(dispatch)=>{
     try {
-        const response= await axios(`/game/${id}`);
+        const response= await axios(`/game/${id}`,{
+        headers: {
+            Authorization: `Bearer ${token}`,
+        }
+        },);
         console.log(response)
         return dispatch({
             type:DETAILS,

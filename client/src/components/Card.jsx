@@ -18,7 +18,7 @@ const Card = ({game}) => {
         <GenericButton buttonText={'Details :'}/>
         }</NavLink>
       <h5>Genre: {genre}</h5>
-      <h5>Platform: {platform}</h5>
+      
       </div>
 
       

@@ -9,4 +9,5 @@
     height: 50px; /* Tamaño personalizado para la imagen */
     border-radius: 50%; /* Borde redondeado para la imagen */
     margin-right: 10px; /* Espacio entre la imagen y el texto */
+    margin-top: 10px;
   }
