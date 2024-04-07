@@ -1,0 +1,22 @@
+.button {
+  background: linear-gradient(43deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 46%, rgb(255, 204, 112) 100%);
+    padding: 0.10rem 1rem; /* Ajusta el padding según tu preferencia */
+    font-size: 1.2rem; /* Tamaño de la fuente */
+    font-weight: bold; /* Negrita */
+    color: rgb(235, 229, 236);
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .button:hover {
+    /* background: rgb(211, 175, 147); Cambia el color en hover */
+    background: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  }
+  
+  .button:active {
+    transform: translateY(2px); /* Efecto de hundimiento en click */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Sombra ligera en click */
+  }
+  

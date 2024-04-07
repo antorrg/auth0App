@@ -38,9 +38,9 @@ const getGames = async (req, page) => {
 
 const nextPageUrl = (req, totalPages, currentPage) => {
     if (currentPage < totalPages) {
-        console.log(currentPage+' soy en next')
+        //console.log(currentPage+' soy en next')
         const nextPage = Number(currentPage) + 1
-        console.log(nextPage+' soy nextPage')
+        //console.log(nextPage+' soy nextPage')
         return `${getBaseUrl(req)}?page=${parseInt(nextPage,10)}`;
     }
     if(currentPage === totalPages){
