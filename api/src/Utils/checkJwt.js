@@ -1,6 +1,6 @@
 const { auth, requiredScopes } = require('express-oauth2-jwt-bearer');
-require ('dotenv').config();
-const {MY_DOMAIN} = process.env;
+// require ('dotenv').config();
+// const {MY_DOMAIN} = process.env;
 
 const checkScopes = requiredScopes('read:messages');
 

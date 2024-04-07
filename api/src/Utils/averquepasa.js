@@ -1,41 +1,41 @@
 
 
-const {
-    auth,
-    claimCheck,
-    InsufficientScopeError,
-  } = require("express-oauth2-jwt-bearer");
-  const dotenv = require("dotenv");
+// const {
+//     auth,
+//     claimCheck,
+//     InsufficientScopeError,
+//   } = require("express-oauth2-jwt-bearer");
+//   const dotenv = require("dotenv");
   
-  dotenv.config();
+//   dotenv.config();
   
-  const validateAccessToken = auth({
-    issuerBaseURL: `https://${process.env.AUTH0_DOMAIN}`,
-    audience: process.env.AUTH0_AUDIENCE,
-  });
+//   const validateAccessToken = auth({
+//     issuerBaseURL: `https://${process.env.AUTH0_DOMAIN}`,
+//     audience: process.env.AUTH0_AUDIENCE,
+//   });
   
-  const checkRequiredPermissions = (requiredPermissions) => {
-    return (req, res, next) => {
-      const permissionCheck = claimCheck((payload) => {
-        const permissions = payload.permissions || [];
+//   const checkRequiredPermissions = (requiredPermissions) => {
+//     return (req, res, next) => {
+//       const permissionCheck = claimCheck((payload) => {
+//         const permissions = payload.permissions || [];
   
-        const hasPermissions = requiredPermissions.every((requiredPermission) =>
-          permissions.includes(requiredPermission)
-        );
+//         const hasPermissions = requiredPermissions.every((requiredPermission) =>
+//           permissions.includes(requiredPermission)
+//         );
   
-        if (!hasPermissions) {
-          throw new InsufficientScopeError();
-        }
+//         if (!hasPermissions) {
+//           throw new InsufficientScopeError();
+//         }
   
-        return hasPermissions;
-      });
+//         return hasPermissions;
+//       });
   
-      permissionCheck(req, res, next);
-    };
-  };
+//       permissionCheck(req, res, next);
+//     };
+//   };
   
-  module.exports = {
-    validateAccessToken,
-    checkRequiredPermissions,
-  };
+//   module.exports = {
+//     validateAccessToken,
+//     checkRequiredPermissions,
+//   };
   
